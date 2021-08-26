@@ -8,7 +8,7 @@ public class ListaCompra {
         Scanner ler = new Scanner(System.in);
         String opcao;
         do {
-            escreverMenu();
+            new Telas().escreverMenu();
             opcao = ler.nextLine();
             switch (opcao) {
                 case "1":
@@ -21,7 +21,7 @@ public class ListaCompra {
                     listaProduto.remove(excluirProduto());
                     break;
                 case "4":
-                    exibitLista(listaProduto);
+                    new Telas().exibitLista(listaProduto);
                     break;
                 default:
                     System.out.println("Valor Digitado inválido!");
@@ -30,35 +30,14 @@ public class ListaCompra {
         } while (true);
     }
 
-    public static void escreverMenu() {
-        System.out.println("|-------- Lista de compras ---------|");
-        System.out.println("|1 - Cadastrar produto e quantidade |");
-        System.out.println("|2 - Alterar produto e quantidade   |");
-        System.out.println("|3 - Excluir Produto                |");
-        System.out.println("|4 - Exibir Lista                   |");
-        System.out.println("|-----------------------------------|");
-    }
-
     public static String AdicionarProduto() {
 
         return preencherProduto();
     }
 
-    public static void exibitLista(List listaCompra) {
-        int contador = 1;
-        System.out.println("\n|-------- Lista de compras ---------|");
-        System.out.println("|Indice - Nome - Quantidade - Marca |");
-        for (int i = 0; i < listaCompra.size(); i++) {
-            System.out.println("| (" + contador + ") - " + listaCompra.get(i).toString().replace("|", " - "));
-            contador++;
-        }
-
-        System.out.println("|-----------------------------------|\n");
-    }
-
     public static void alterarProduto(List listaCompra){
         Scanner ler = new Scanner(System.in);
-        exibitLista(listaCompra);
+        new Telas().exibitLista(listaCompra);
         System.out.println("Digite o numero do produto que deseja alterar!");
         int indice = ler.nextInt() - 1;
         listaCompra.set(indice, preencherProduto());
