@@ -45,7 +45,7 @@ public class ListaCompra {
 
     public static int excluirProduto(){
         Scanner ler = new Scanner(System.in);
-        System.out.println("Digite o numero do produto que deseja alterar!");
+        System.out.println("Digite o numero do produto que deseja excluir!");
         int indice = ler.nextInt() - 1;
         return indice;
     }
@@ -55,9 +55,9 @@ public class ListaCompra {
 
 
         Scanner ler = new Scanner(System.in);
-        System.out.println("DIgite o nome do produto!");
+        System.out.println("Digite o nome do produto!");
         produto = ler.nextLine();
-        System.out.println("DIgite a quantidade do produto!");
+        System.out.println("Digite a quantidade do produto!");
         quantidade = ler.nextLine();
         produto = produto + "|" + quantidade;
         System.out.println("Digite a marca de preferencia!");
